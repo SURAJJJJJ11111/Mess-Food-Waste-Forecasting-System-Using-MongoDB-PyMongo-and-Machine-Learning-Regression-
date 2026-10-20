@@ -1,0 +1,4 @@
+model_name,algorithm,mae_kg,rmse_kg,r2_score,mae_improvement_percentage,status
+Random Forest Regressor,RandomForestRegressor,14.229,19.514,0.4959,7.68,Superior Generalization
+Decision Tree Regressor,DecisionTreeRegressor,14.645,19.683,0.4871,4.98,Single Tree Baseline
+Historical Mean Baseline,MealTypeMean,15.412,20.835,0.4254,0.0,Domain Benchmark

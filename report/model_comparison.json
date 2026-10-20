@@ -1,0 +1,43 @@
+{
+  "generated_at": "2026-10-19T06:02:33.750418+00:00",
+  "n_train_samples": 1200,
+  "n_test_samples": 301,
+  "target_variable": "total_leftover_kg",
+  "models_evaluated": [
+    {
+      "model_name": "Random Forest Regressor",
+      "algorithm": "RandomForestRegressor",
+      "mae_kg": 14.229,
+      "rmse_kg": 19.514,
+      "r2_score": 0.4959,
+      "mae_improvement_percentage": 7.68,
+      "status": "Superior Generalization"
+    },
+    {
+      "model_name": "Decision Tree Regressor",
+      "algorithm": "DecisionTreeRegressor",
+      "mae_kg": 14.645,
+      "rmse_kg": 19.683,
+      "r2_score": 0.4871,
+      "mae_improvement_percentage": 4.98,
+      "status": "Single Tree Baseline"
+    },
+    {
+      "model_name": "Historical Mean Baseline",
+      "algorithm": "MealTypeMean",
+      "mae_kg": 15.412,
+      "rmse_kg": 20.835,
+      "r2_score": 0.4254,
+      "mae_improvement_percentage": 0.0,
+      "status": "Domain Benchmark"
+    }
+  ],
+  "selected_best_model": "RandomForestRegressor",
+  "high_waste_classifier": {
+    "threshold_kg": 35.0,
+    "accuracy": 0.8339,
+    "precision": 0.7756,
+    "recall": 0.8897,
+    "f1_score": 0.8288
+  }
+}

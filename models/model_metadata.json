@@ -1,0 +1,138 @@
+{
+  "model_name": "RandomForestRegressor",
+  "model_version": "2.0.0",
+  "trained_at": "2026-10-19T06:02:33.749416+00:00",
+  "random_seed": 42,
+  "n_train_samples": 1200,
+  "n_test_samples": 301,
+  "target_variable": "total_leftover_kg",
+  "features": [
+    "expected_attendance",
+    "total_prepared_kg",
+    "prev_leftover_kg",
+    "prev_attendance",
+    "planned_per_capita",
+    "is_weekend",
+    "special_event_int",
+    "meal_type",
+    "day_of_week",
+    "weather_condition"
+  ],
+  "selected_best_model": "RandomForestRegressor",
+  "model_selection_rationale": "RandomForestRegressor demonstrated superior test performance with an MAE of 14.229 kg (an advantage of 0.416 kg over the alternative). Random Forest ensembles multiple de-correlated trees to damp individual decision tree variance.",
+  "model_comparison": [
+    {
+      "model_name": "Random Forest Regressor",
+      "algorithm": "RandomForestRegressor",
+      "mae_kg": 14.229,
+      "rmse_kg": 19.514,
+      "r2_score": 0.4959,
+      "mae_improvement_percentage": 7.68,
+      "status": "Superior Generalization"
+    },
+    {
+      "model_name": "Decision Tree Regressor",
+      "algorithm": "DecisionTreeRegressor",
+      "mae_kg": 14.645,
+      "rmse_kg": 19.683,
+      "r2_score": 0.4871,
+      "mae_improvement_percentage": 4.98,
+      "status": "Single Tree Baseline"
+    },
+    {
+      "model_name": "Historical Mean Baseline",
+      "algorithm": "MealTypeMean",
+      "mae_kg": 15.412,
+      "rmse_kg": 20.835,
+      "r2_score": 0.4254,
+      "mae_improvement_percentage": 0.0,
+      "status": "Domain Benchmark"
+    }
+  ],
+  "regression_metrics": {
+    "mae_kg": 14.229,
+    "rmse_kg": 19.514,
+    "r2_score": 0.4959
+  },
+  "decision_tree_metrics": {
+    "mae_kg": 14.645,
+    "rmse_kg": 19.683,
+    "r2_score": 0.4871,
+    "mae_improvement_percentage": 4.98
+  },
+  "baseline_metrics": {
+    "baseline_type": "Historical Mean by Meal Type",
+    "mae_kg": 15.412,
+    "rmse_kg": 20.835,
+    "r2_score": 0.4254,
+    "mae_improvement_percentage": 7.68
+  },
+  "classification_metrics": {
+    "threshold_kg": 35.0,
+    "accuracy": 0.8339,
+    "precision": 0.7756,
+    "recall": 0.8897,
+    "f1_score": 0.8288
+  },
+  "feature_importances": {
+    "planned_per_capita": 0.5758,
+    "total_prepared_kg": 0.1795,
+    "prev_leftover_kg": 0.0627,
+    "prev_attendance": 0.0611,
+    "expected_attendance": 0.0585,
+    "weather_condition_Sunny": 0.0073,
+    "weather_condition_Pleasant": 0.0061,
+    "day_of_week_Wednesday": 0.0061,
+    "day_of_week_Monday": 0.0058,
+    "day_of_week_Thursday": 0.0052,
+    "day_of_week_Friday": 0.0045,
+    "weather_condition_Rainy": 0.0042,
+    "day_of_week_Tuesday": 0.0041,
+    "meal_type_Lunch": 0.0038,
+    "meal_type_Dinner": 0.0034,
+    "day_of_week_Saturday": 0.0033,
+    "is_weekend": 0.0025,
+    "day_of_week_Sunday": 0.0023,
+    "weather_condition_Cold": 0.0022,
+    "special_event_int": 0.0013,
+    "meal_type_Breakfast": 0.0001,
+    "meal_type_Snacks": 0.0
+  },
+  "dt_feature_importances": {
+    "planned_per_capita": 0.7509,
+    "total_prepared_kg": 0.1603,
+    "expected_attendance": 0.0361,
+    "prev_attendance": 0.0164,
+    "meal_type_Lunch": 0.0163,
+    "prev_leftover_kg": 0.0084,
+    "weather_condition_Sunny": 0.0038,
+    "day_of_week_Sunday": 0.0025,
+    "meal_type_Dinner": 0.0024,
+    "day_of_week_Wednesday": 0.0023,
+    "day_of_week_Thursday": 0.0005,
+    "is_weekend": 0.0,
+    "special_event_int": 0.0,
+    "meal_type_Breakfast": 0.0,
+    "meal_type_Snacks": 0.0,
+    "day_of_week_Friday": 0.0,
+    "day_of_week_Monday": 0.0,
+    "day_of_week_Saturday": 0.0,
+    "day_of_week_Tuesday": 0.0,
+    "weather_condition_Cold": 0.0,
+    "weather_condition_Pleasant": 0.0,
+    "weather_condition_Rainy": 0.0
+  },
+  "hyperparameters": {
+    "random_forest": {
+      "n_estimators": 100,
+      "max_depth": 12,
+      "min_samples_split": 4,
+      "min_samples_leaf": 2
+    },
+    "decision_tree": {
+      "max_depth": 6,
+      "min_samples_split": 10,
+      "min_samples_leaf": 8
+    }
+  }
+}
